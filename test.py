@@ -16,10 +16,7 @@ N = len(t)
 
 A = np.column_stack((t**0, t))
 
-ATA = A.T @ A
-ATY = A.T @ y
-
-c = np.linalg.solve(ATA, ATY)
+c = np.linalg.lstsq(A, y)[0]
 c0 = c[0]
 c1 = c[1]
 
