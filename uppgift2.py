@@ -83,4 +83,3 @@ plt.show()
 
 #Uppgift c;
 
-f = lambda t, L: d0 + d1*t + d2*np.sin((2*np.pi*t)/L) + d3*np.cos((2*np.pi*t)/L)
