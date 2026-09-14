@@ -1,3 +1,3 @@
 # Numeriska-Metoder-Laboration
 
-Hej
+Hej, labb 1
