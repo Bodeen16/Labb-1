@@ -44,7 +44,7 @@ plt.grid()
 plt.show()
 """
 
-
+"""
 #Uppgift b; 
 N = len(t)
 
@@ -79,3 +79,7 @@ plt.show()
 plt.plot(t + 1980, r)
 plt.grid()
 plt.show()
+"""
+
+#Uppgift c;
+
