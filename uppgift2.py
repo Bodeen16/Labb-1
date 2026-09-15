@@ -81,7 +81,7 @@ plt.grid()
 plt.show()
 """
 
-
+"""
 #Uppgift c;
 N = len(t)
 
@@ -148,7 +148,7 @@ plt.show()
 plt.plot(t + 1980, r)
 plt.grid()
 plt.show()
-
+"""
 
 #Uppgift d; 
 
@@ -157,3 +157,11 @@ plt.show()
 #Uppgift b: RMS-felet = 3.2131915718048005
 #Uppgift c: RMS-felet = 3.198098527008681
 #Vi kan alltså konstatera att modell c gav oss det lägsta RMS-felet. 
+#Modell c verkar bäst eftersom den modellen har lägst RMS-fel, dvs. bäst överensstämmelse. 
+
+#Från modellerna a-c avläser vi följande värden: 
+#c1 = 3.533607064869332 - modell a
+#d1 = 3.4878236585092433 - modell b
+#d1 = 3.495259861428787 - modell c
+
+#Vi ser därmed att KPI ungefär ökade med 3.53, 3.49 respektive 3.50 KPI-enheter per år. 
