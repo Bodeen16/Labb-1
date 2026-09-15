@@ -12,7 +12,7 @@ def trapets(f, n, igranser):
     x = np.linspace(a, b, n+1)
     fx = f(x)
 
-    Th = h*(fx[0]/2 + np.sum(fx[1:-1]) + 0.5 * fx[-1]/2)
+    Th = h*(fx[0]/2 + np.sum(fx[1:-1]) + fx[-1]/2)
     print("Th=", Th)
     return Th
 
@@ -23,5 +23,5 @@ print("Beräknat värde:", I_trapets)
 print("Exakt värde:", I_exakt)
 
 #Från utskriften ser vi att det beräknadet värdet skiljer sig något från det exakta värdet men att det fortfarande är tillräckligt nära för att vi ska kunna verifiera att funktionen fungerar.
-#Beräknat värde: 20.487475851427376
-#Exakt värde: 20.7781121978613
+#Beräknat värde: 20.7830380953846
+#Exakt värde: 20.7781121978613 
