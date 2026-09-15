@@ -29,7 +29,7 @@ print("Exakt värde:", I_exakt)
 #uppgfift b;
 f = lambda x: x**3 * np.exp(x)
 igranser = [0, 2]
-n = 512
+n = 1
 
 def trapets(f, n, igranser):
     a, b = igranser
@@ -40,12 +40,17 @@ def trapets(f, n, igranser):
     Th = h*(fx[0]/2 + np.sum(fx[1:-1]) + fx[-1]/2)
     return Th
 
-while n > 1:
+forra_fel = 0
+
+while 512 >= n:
     I_trapets = trapets(f, n, igranser)
     I_exakt = 6 + 2 *np.exp(2)
+    fel = abs(I_trapets - I_exakt)
     print("n:", n)
-    print("fel:", abs(I_trapets - I_exakt))
+    print("fel:", fel)
+    print("kvot:", forra_fel/fel)
     print(" ")
-    n = n // 2
+    forra_fel = fel
+    n = n * 2
 
-#vi ser att när n halveras så ungefär multipliseras felet med 4. vilket följer att approxamationsfelet är Ch^2 eller med andre ord att e[h]/e[h/2] = 4.
+#vi ser att när n fördubblas så divideras ungefär felet med 4. vilket följer att approxamationsfelet är Ch^2 eller med andre ord att e[h]/e[h/2] = 4.
