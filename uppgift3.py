@@ -102,4 +102,33 @@ while h < 9:
 """
 
 #Uppgift e; 
+ft = np.array([12.00, 15.10, 19.01, 23.92, 30.11, 37.90, 47.70, 60.03, 75.56])
+h = 1
+Th_lista = []
 
+while h <= 2:
+    fta = []
+    i = 0 
+    while i < 9:
+        fta.append(ft[i])
+        i = i+h 
+  
+    Th = h*(fta[0]/2 + np.sum(fta[1:-1]) + fta[-1]/2)
+    Th_lista.append(Th)
+    h = h *2
+
+T1h = Th_lista[0]
+T2h = Th_lista[1]
+
+R = T1h - (T2h - T1h)/3
+
+h = 1
+Sh = (h/3) * (ft[0] + 4*np.sum(ft[1:-1:2]) + 2*np.sum(ft[2:-1:2]) + ft[-1])
+
+print("Richardsonextrapolation =", R)
+print("Simposons regel,", Sh)
+
+# Vi får du utskriften: 
+#Richardsonextrapolation = 276.3333333333333
+#Simposons regel, 276.3333333333333
+#Ser att Richardsonextrapolation och Simpsons regel ger samma värde vilket stämmer överens med teorin Rh/2 = Sh/2
