@@ -26,6 +26,8 @@ print("Exakt värde:", I_exakt)
 #Beräknat värde: 20.7830380953846
 #Exakt värde: 20.7781121978613 
 """
+
+"""
 #uppgfift b;
 f = lambda x: x**3 * np.exp(x)
 igranser = [0, 2]
@@ -54,3 +56,13 @@ while 512 >= n:
     n = n * 2
 
 #vi ser att när n fördubblas så divideras ungefär felet med 4. vilket följer att approxamationsfelet är Ch^2 eller med andre ord att e[h]/e[h/2] = 4.
+"""
+
+#Uppgift c;
+
+ft = np.array([12.00, 15.10, 19.01, 23.92, 30.11, 37.90, 47.70, 60.03, 75.56])
+h = 1
+Th = h*(ft[0]/2 + np.sum(ft[1:-1]) + ft[-1]/2)
+print("Skattad total energi:", Th)
+
+#Vi får då utskriften: Skattad total energi: 277.55.
