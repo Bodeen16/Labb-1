@@ -133,6 +133,7 @@ print("Simposons regel,", Sh)
 #Ser att Richardsonextrapolation och Simpsons regel ger samma värde vilket stämmer överens med teorin Rh/2 = Sh/2
 """
 
+"""
 #Uppgift f;
 t = np.array([2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022])
 ft = np.array([12.00, 15.10, 19.01, 23.92, 30.11, 37.90, 47.70, 60.03, 75.56])
@@ -150,6 +151,40 @@ print("b =", b)
 #Vi får utskriften: 
 #a = 11.998951209795411
 #b = 0.23001165529172854
+"""
+
+# Uppgift g;
+ft = np.array([12.00, 15.10, 19.01, 23.92, 30.11, 37.90, 47.70, 60.03, 75.56])
+
+a = 11.998951209795411
+b = 0.23001165529172854
+t = 2023 
+h = 1
+
+f = lambda t: a*np.exp(b*(t-2014))
+print("Effekt under 2023:", f(t), "kW")
+
+ft9 = f(t)
+ny_ft = np.append(ft, f(t))
+
+Th = h*(ny_ft[0]/2 + np.sum(ny_ft[1:-1]) + ny_ft[-1]/2)
+print("Total skattad energi (2014-2023):", Th, "kWår")
+
+#Vi får utskriften: 
+#Effekt under 2023: 95.09954113019468 kW
+#Total skattad energi (2014-2023): 362.8797705650973 kW/år
+
+# Pilotprojektet kan anses vara lyckat eftersom den totala mängden energi under 2014-2023 överstiger 350kWår.
+
+
+
+
+
+
+
+
+
+
 
 
 
