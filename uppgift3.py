@@ -101,10 +101,12 @@ while h < 9:
 #Vi ser att noggranhetsordning stämmer hyfsat med vad den ska vara för trapetsregeln i teorin där p = 2.
 """
 
+"""
 #Uppgift e; 
 ft = np.array([12.00, 15.10, 19.01, 23.92, 30.11, 37.90, 47.70, 60.03, 75.56])
 h = 1
 Th_lista = []
+Sh = (h/3) * (ft[0] + 4*np.sum(ft[1:-1:2]) + 2*np.sum(ft[2:-1:2]) + ft[-1])
 
 while h <= 2:
     fta = []
@@ -122,9 +124,6 @@ T2h = Th_lista[1]
 
 R = T1h - (T2h - T1h)/3
 
-h = 1
-Sh = (h/3) * (ft[0] + 4*np.sum(ft[1:-1:2]) + 2*np.sum(ft[2:-1:2]) + ft[-1])
-
 print("Richardsonextrapolation =", R)
 print("Simposons regel,", Sh)
 
@@ -132,3 +131,25 @@ print("Simposons regel,", Sh)
 #Richardsonextrapolation = 276.3333333333333
 #Simposons regel, 276.3333333333333
 #Ser att Richardsonextrapolation och Simpsons regel ger samma värde vilket stämmer överens med teorin Rh/2 = Sh/2
+"""
+
+#Uppgift f;
+t = np.array([2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022])
+ft = np.array([12.00, 15.10, 19.01, 23.92, 30.11, 37.90, 47.70, 60.03, 75.56])
+
+A = np.column_stack((t**0, t**1 - 2014))
+c = np.linalg.lstsq(A, np.log(ft))[0]
+
+
+atilde = c[0]
+b = c[1]
+a = np.exp(atilde)
+print("a =", a)
+print("b =", b)
+
+#Vi får utskriften: 
+#a = 11.998951209795411
+#b = 0.23001165529172854
+
+
+
